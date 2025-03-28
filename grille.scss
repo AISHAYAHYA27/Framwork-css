@@ -1,0 +1,463 @@
+/* Define standard variables and values for website */
+$bgcolor: lightblue;
+$textcolor: rgb(237, 230, 230);
+$fontsize: 18px;
+$margin: 0px;
+$background-color: white;
+$colors: red, orange, yellow, green, blue, indigo, violet, pink, brown, gray, cyan, lime;
+$textcolors: (
+    "muted": #6c757d,
+    "primary": #007bff,
+    "success": #28a745,
+    "info": #17a2b8,
+    "warning": #ffc107,
+    "error": #dc3545
+);
+$navbgcolor: rgb(243, 236, 236);
+$navcolor: black;
+$border: 1px solid black;
+$navbgcolor: #f5f5f5;
+$border: 1px solid #ccc;
+
+$modal-bg-color: rgb(148, 96, 96);
+$modal-width: 50%;
+$modal-max-width: 500px;
+$modal-padding: 10px;
+$modal-border-radius: 10px;
+$modal-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+$modal-z-index: 9999;
+$popin-dismiss-size: 1.5em;
+$popin-dismiss-position: 10px;
+$modal-color: black;
+
+$primary: #4CAF50;
+$secondary: #FF5733;
+$font-family-base: 'Roboto', sans-serif;
+
+/* Use the variables */
+body {
+    background-color: $bgcolor;
+    color: $textcolor;
+    font-size: $fontsize;
+    margin: $margin;
+    background-color: $background-color;
+}
+
+nav {
+    background-color: $navbgcolor;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 5px;
+    border: $border;
+    border-radius: 2px;
+    margin: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@mixin nav-link-style {
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: black;
+    display: inline-block;
+}
+
+.nav-link {
+    @include nav-link-style;
+    background-color: rgb(180, 180, 166);
+
+    &:hover {
+        background-color: rgb(150, 150, 140);
+    }
+}
+
+.active {
+    @extend .nav-link;
+    background-color: rgb(136, 220, 121);
+
+    &:hover {
+        background-color: rgb(116, 200, 101);
+    }
+}
+
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.dropdown {
+    position: relative;
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgb(193, 126, 126);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        min-width: 150px;
+        z-index: 1000;
+
+        a {
+            @include nav-link-style;
+            padding: 10px;
+            display: block;
+            background-color: white;
+
+            &:hover {
+                background-color: #eee;
+            }
+        }
+    }
+
+    &:hover .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+li {
+    text-decoration: none;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+@for $i from 1 through 6 {
+    .col-#{$i} {
+        width: calc(100% / 12 * $i);
+        height: 50px;
+    }
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+@each $color in $colors {
+    $index: index($colors, $color);
+
+    .box:nth-child(#{$index}) {
+        background-color: $color;
+
+
+        @if $color ==yellow or $color ==pink or $color ==cyan or $color ==lime {
+            color: black;
+        }
+    }
+}
+
+@mixin button() {
+    padding: 2px 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    border: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    box-shadow: #574c4c;
+    font-family: $font-family-base;
+}
+
+.btn:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    @include button;
+
+    &.btn-primary {
+        @include button;
+        background-color: $primary;
+        color: white;
+
+    }
+
+    .btn-secondary.active {
+        background-color: $secondary !important;
+        color: white !important;
+    }
+
+    &.btn-danger.disabled {
+        background-color: gray;
+        color: lightgray;
+        cursor: not-allowed;
+
+    }
+}
+
+.img-responsive {
+    width: 100vw;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 40px;
+
+    img {
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+
+    }
+
+}
+
+.img-blur {
+    width: 25vw;
+    height: 25vw;
+    filter: blur(4px);
+
+
+}
+
+.img-circle {
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+.img-rounded {
+    width: 25vw;
+    height: 25vw;
+    border-radius: 10px;
+
+}
+
+.img-thumbnail {
+    width: 23vw;
+    height: 24vw;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 5px;
+
+}
+
+.img-thumbnail:hover {
+    box-shadow: 0 0 2px 1px rgba(73, 76, 77, 0.5);
+}
+
+@each $name, $color in $textcolors {
+    .text-#{$name} {
+        color: $color;
+        gap: 10px;
+    }
+
+    .bg-#{$name} {
+        background-color: $color;
+        color: white;
+
+    }
+}
+
+.bg-warning {
+    color: black;
+}
+
+@mixin alert() {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    color: white;
+    padding: 7px 10px;
+    border-radius: 4px;
+    border: 1px black;
+    margin-bottom: 10px;
+
+}
+
+.alert-success {
+    @include alert;
+    background-color: #6fd0b5
+}
+
+.alert-info {
+    @include alert;
+    background-color: rgb(140, 189, 209);
+
+}
+
+.alert-warning {
+    @include alert;
+    background-color: orange;
+}
+
+.alert-danger {
+    @include alert;
+    background-color: rgb(222, 115, 115);
+}
+
+.rowbutton {
+    display: flex;
+    justify-content: center;
+}
+
+.hidden-print {
+    display: block;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $modal-width;
+    max-width: $modal-max-width;
+    background-color: $modal-bg-color;
+    padding: $modal-padding;
+    border-radius: $modal-border-radius;
+    box-shadow: $modal-box-shadow;
+    z-index: $modal-z-index;
+    color: $modal-color;
+
+    .modal.fade {
+        transition: opacity 0.3s ease;
+    }
+
+    .modal.show {
+        opacity: 1;
+    }
+
+    .popin-dismiss {
+        position: absolute;
+        top: $popin-dismiss-position;
+        right: $popin-dismiss-position;
+        font-size: $popin-dismiss-size;
+        cursor: pointer;
+
+    }
+
+    body.dark-theme {
+        background-color: #333;
+        color: white;
+    }
+}
+
+// =============================MEDIA_QUERIES=====================
+
+
+@media (max-width: 600px) {
+    .img-responsive {
+        width: 100vw;
+        height: 400px;
+    }
+
+    .hidden-sm {
+        display: none;
+    }
+
+    .visible-sm {
+        display: block;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .img-responsive {
+        width: 48%;
+        height: auto;
+        justify-content: center;
+    }
+
+    @mixin buttons() {
+        display: flex;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        width: 200px;
+        border: none;
+        margin-bottom: 30px;
+        margin-left: 20px;
+
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .btn {
+        @include buttons;
+
+        &.btn-primary {
+            @include buttons;
+            background-color: rgb(163, 211, 237);
+            color: white;
+            margin-top: 10px;
+        }
+
+        &.btn-secondary.active {
+            background-color: red;
+            color: white;
+            margin-top: 10px;
+        }
+
+        &.btn-danger.disabled {
+            background-color: gray;
+            color: lightgray;
+            cursor: not-allowed;
+            margin-top: 10px;
+        }
+    }
+
+}
+
+
+
+@media (min-width: 1025px)and (max-width:1280) {
+
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .img-responsive {
+        width: 48%;
+        height: auto;
+        justify-content: center;
+    }
+
+    .visible-lg {
+        display: block;
+    }
+
+    .hidden-lg {
+        display: none;
+    }
+
+
+}
+
+
+@media print {
+    .hidden-print {
+        display: none;
+    }
+}

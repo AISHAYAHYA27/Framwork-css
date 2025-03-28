@@ -1,0 +1,22 @@
+{
+  "name": "framworkcss",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EpitechWebAcademiePromo2026/W-INT-501-PAR-1-1-frameworkcss-aissatou-labbo.sow.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EpitechWebAcademiePromo2026/W-INT-501-PAR-1-1-frameworkcss-aissatou-labbo.sow/issues"
+  },
+  "homepage": "https://github.com/EpitechWebAcademiePromo2026/W-INT-501-PAR-1-1-frameworkcss-aissatou-labbo.sow#readme",
+  "description": "",
+  "dependencies": {
+    "saas": "^1.0.0"
+  }
+}

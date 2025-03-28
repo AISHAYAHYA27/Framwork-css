@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Framework CSS</title>
+    <link href="grille.css" rel="stylesheet">
+    <link href="bulles.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="nav nav-pills nav-justified">
+        <a class="nav-item nav-link active" href="#">Active</a>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                aria-expanded="false">Dropdown</a>
+
+            <div class="dropdown-menu">
+
+                <div class="tab-container">
+                    <ul class="tab-list">
+                        <li class="active" data-target="#">Onglet 1</li>
+                        <li data-target="#tab1">Onglet 2</li>
+                        <li data-target="#tab">Onglet 3</li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active">
+                            <p>Contenu de l'onglet 1</p>
+                        </div>
+                        <div class="tab-pane">
+                            <p>Contenu de l'onglet 2</p>
+                            <div class="tab-container">
+                                <ul class="tab-list">
+                                    <li class="active" data-target="#">Sous-Onglet 1</li>
+                                    <li data-target="#sub-tab2">Sous-Onglet 2</li>
+                                </ul>
+                                <div class="tab-pane active">
+                                    <p>Contenu du Sous-Onglet 1</p>
+                                </div>
+                                <div class="tab-pane">
+                                    <p>Onglet show </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane">
+                        <p>Contenu de l'onglet 3</p>
+                    </div>
+                </div>
+            </div>
+
+            <a class="nav-item nav-link" href="#">Statues</a>
+            <a class="nav-item nav-link disabled" href="#">Disabled</a>
+
+    </nav>
+    <div class="container">
+        <div class="container-fluid"></div>
+        <div class="row visible-lg">
+            <div class="col-1 box"></div>
+            <div class="col-1 box"></div>
+            <div class="col-1 box"></div>
+            <div class="col-1 box"></div>
+            <div class="col-1 box"></div>
+            <div class="col-1 box"></div>
+            <div class="col-1 box"></div>
+            <div class="col-1 box"></div>
+            <div class="col-1 box"></div>
+            <div class="col-1 box"></div>
+            <div class="col-1 box"></div>
+            <div class="col-1 box"></div>
+        </div>
+        <div class="row visible-lg">
+            <div class="col-2 box"></div>
+            <div class="col-2 box"></div>
+            <div class="col-2 box"></div>
+            <div class="col-2 box"></div>
+            <div class="col-2 box"></div>
+            <div class="col-2 box"></div>
+        </div>
+        <div class="row visible-lg">
+            <div class="col-3 box"></div>
+            <div class="col-3 box"></div>
+            <div class="col-3 box"></div>
+            <div class="col-3 box"></div>
+        </div>
+        <div class="row visible-lg">
+            <div class="col-4 box"></div>
+            <div class="col-4 box"></div>
+            <div class="col-4 box"></div>
+        </div>
+        <div class="row visible-lg">
+            <div class="col-6 box"></div>
+            <div class="col-6 box"></div>
+        </div>
+
+
+        <div class="rowbutton mt-4">
+            <button class="btn btn-primary open-popin tooltip" title="Clique moi !" data-placement="top"
+                data-target="#myModal1">
+                Bouton primaire
+            </button>
+
+            <button class="btn btn-secondary open-popin tooltip" title="Je suis active" data-placement="right"
+                data-target="#myModal2">
+                Bouton actif
+            </button>
+
+            <button class="btn btn-danger disabled tooltip" title=" Je suis désactivé !" data-placement="bottom"
+                disabled>
+                Bouton désactivé
+            </button>
+        </div>
+
+        <div class="modal" id="myModal1">
+            <div class="modal-content">
+                <span class="popin-dismiss">&times;</span>
+                <div class="row visible-lg">
+                    <div class="col-3 box"></div>
+                    <div class="col-3 box"></div>
+                    <div class="col-3 box"></div>
+                    <div class="col-3 box"></div>
+                </div>
+                <h3>Popin 1: Bouton primaire</h3>
+                <p>Mon premier popin creer via js .</p>
+                <div class="row visible-lg">
+                    <div class="col-6 box"></div>
+                    <div class="col-6 box"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="myModal2">
+            <div class="modal-content">
+                <span class="popin-dismiss">&times;</span>
+                <div class="row visible-lg">
+                    <div class="col-3 box"></div>
+                    <div class="col-3 box"></div>
+                    <div class="col-3 box"></div>
+                    <div class="col-3 box"></div>
+                </div>
+                <h3>Popin 2: Bouton actif</h3>
+                <p>Je suis un bouton actif du site framwork_css Bootstrap🥰😘😍😂</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <img src="assets/image.jpg" class="img-responsive img-thumbnail img-circle img-rounded" alt="image thumbnail">
+        <img src="assets/image.jpg" class="img-responsive img-blur hidden-print" alt="image floutté">
+        <img src="assets/image.jpg" class="img-responsive img-circle" alt="image en cercle">
+        <img src="assets/image.jpg" class="img-responsive img-rounded" alt="image rounded">
+
+    </div>
+
+    <div class="text">
+        <p class="text-muted hidden-sm">Texte en gris</p>
+        <p class="text-primary hidden-sm">Texte en bleu</p>
+        <p class="text-success hidden-sm">Texte en vert</p>
+        <p class="text-info hidden-sm">Texte en turquoise</p>
+        <p class="text-warning hidden-sm">Texte en jaune</p>
+        <p class="text-erreur hidden-sm">Texte en rouge</p>
+    </div>
+
+    <div class="alert">
+        <div class="alert alert-success">Succès !</div>
+        <div class="alert alert-info">Information</div>
+        <div class="alert alert-warning">Attention</div>
+        <div class="alert alert-danger">Erreur</div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+    <script src="onglet.js"></script>
+    <script src="tooltip.js"></script>
+</body>
+
+</html>

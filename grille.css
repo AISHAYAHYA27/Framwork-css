@@ -1,0 +1,519 @@
+/* Define standard variables and values for website */
+/* Use the variables */
+body {
+  background-color: lightblue;
+  color: rgb(237, 230, 230);
+  font-size: 18px;
+  margin: 0px;
+  background-color: white;
+}
+
+nav {
+  background-color: #f5f5f5;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 5px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  margin: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link, .active {
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: black;
+  display: inline-block;
+  background-color: rgb(180, 180, 166);
+}
+.nav-link:hover, .active:hover {
+  background-color: rgb(150, 150, 140);
+}
+
+.active {
+  background-color: rgb(136, 220, 121);
+}
+.active:hover {
+  background-color: rgb(116, 200, 101);
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgb(193, 126, 126);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  min-width: 150px;
+  z-index: 1000;
+}
+.dropdown .dropdown-menu a {
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: black;
+  display: inline-block;
+  padding: 10px;
+  display: block;
+  background-color: white;
+}
+.dropdown .dropdown-menu a:hover {
+  background-color: #eee;
+}
+.dropdown:hover .dropdown-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  text-decoration: none;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-1 {
+  width: 8.3333333333%;
+  height: 50px;
+}
+
+.col-2 {
+  width: 16.6666666667%;
+  height: 50px;
+}
+
+.col-3 {
+  width: 25%;
+  height: 50px;
+}
+
+.col-4 {
+  width: 33.3333333333%;
+  height: 50px;
+}
+
+.col-5 {
+  width: 41.6666666667%;
+  height: 50px;
+}
+
+.col-6 {
+  width: 50%;
+  height: 50px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.box:nth-child(1) {
+  background-color: red;
+}
+
+.box:nth-child(2) {
+  background-color: orange;
+}
+
+.box:nth-child(3) {
+  background-color: yellow;
+  color: black;
+}
+
+.box:nth-child(4) {
+  background-color: green;
+}
+
+.box:nth-child(5) {
+  background-color: blue;
+}
+
+.box:nth-child(6) {
+  background-color: indigo;
+}
+
+.box:nth-child(7) {
+  background-color: violet;
+}
+
+.box:nth-child(8) {
+  background-color: pink;
+  color: black;
+}
+
+.box:nth-child(9) {
+  background-color: brown;
+}
+
+.box:nth-child(10) {
+  background-color: gray;
+}
+
+.box:nth-child(11) {
+  background-color: cyan;
+  color: black;
+}
+
+.box:nth-child(12) {
+  background-color: lime;
+  color: black;
+}
+
+.btn:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  padding: 2px 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  border: none;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  box-shadow: #574c4c;
+  font-family: "Roboto", sans-serif;
+}
+.btn.btn-primary {
+  padding: 2px 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  border: none;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  box-shadow: #574c4c;
+  font-family: "Roboto", sans-serif;
+  background-color: #4CAF50;
+  color: white;
+}
+.btn .btn-secondary.active {
+  background-color: #FF5733 !important;
+  color: white !important;
+}
+.btn.btn-danger.disabled {
+  background-color: gray;
+  color: lightgray;
+  cursor: not-allowed;
+}
+
+.img-responsive {
+  width: 100vw;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 40px;
+}
+.img-responsive img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-blur {
+  width: 25vw;
+  height: 25vw;
+  filter: blur(4px);
+}
+
+.img-circle {
+  width: 25vw;
+  height: 25vw;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.img-rounded {
+  width: 25vw;
+  height: 25vw;
+  border-radius: 10px;
+}
+
+.img-thumbnail {
+  width: 23vw;
+  height: 24vw;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.img-thumbnail:hover {
+  box-shadow: 0 0 2px 1px rgba(73, 76, 77, 0.5);
+}
+
+.text-muted {
+  color: #6c757d;
+  gap: 10px;
+}
+
+.bg-muted {
+  background-color: #6c757d;
+  color: white;
+}
+
+.text-primary {
+  color: #007bff;
+  gap: 10px;
+}
+
+.bg-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.text-success {
+  color: #28a745;
+  gap: 10px;
+}
+
+.bg-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.text-info {
+  color: #17a2b8;
+  gap: 10px;
+}
+
+.bg-info {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.text-warning {
+  color: #ffc107;
+  gap: 10px;
+}
+
+.bg-warning {
+  background-color: #ffc107;
+  color: white;
+}
+
+.text-error {
+  color: #dc3545;
+  gap: 10px;
+}
+
+.bg-error {
+  background-color: #dc3545;
+  color: white;
+}
+
+.bg-warning {
+  color: black;
+}
+
+.alert-success {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+  color: white;
+  padding: 7px 10px;
+  border-radius: 4px;
+  border: 1px black;
+  margin-bottom: 10px;
+  background-color: #6fd0b5;
+}
+
+.alert-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+  color: white;
+  padding: 7px 10px;
+  border-radius: 4px;
+  border: 1px black;
+  margin-bottom: 10px;
+  background-color: rgb(140, 189, 209);
+}
+
+.alert-warning {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+  color: white;
+  padding: 7px 10px;
+  border-radius: 4px;
+  border: 1px black;
+  margin-bottom: 10px;
+  background-color: orange;
+}
+
+.alert-danger {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+  color: white;
+  padding: 7px 10px;
+  border-radius: 4px;
+  border: 1px black;
+  margin-bottom: 10px;
+  background-color: rgb(222, 115, 115);
+}
+
+.rowbutton {
+  display: flex;
+  justify-content: center;
+}
+
+.hidden-print {
+  display: block;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 500px;
+  background-color: rgb(148, 96, 96);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  color: black;
+}
+.modal .modal.fade {
+  transition: opacity 0.3s ease;
+}
+.modal .modal.show {
+  opacity: 1;
+}
+.modal .popin-dismiss {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.modal body.dark-theme {
+  background-color: #333;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .img-responsive {
+    width: 100vw;
+    height: 400px;
+  }
+  .hidden-sm {
+    display: none;
+  }
+  .visible-sm {
+    display: block;
+  }
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  .img-responsive {
+    width: 48%;
+    height: auto;
+    justify-content: center;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .btn {
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: 200px;
+    border: none;
+    margin-bottom: 30px;
+    margin-left: 20px;
+  }
+  .btn.btn-primary {
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: 200px;
+    border: none;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    background-color: rgb(163, 211, 237);
+    color: white;
+    margin-top: 10px;
+  }
+  .btn.btn-secondary.active {
+    background-color: red;
+    color: white;
+    margin-top: 10px;
+  }
+  .btn.btn-danger.disabled {
+    background-color: gray;
+    color: lightgray;
+    cursor: not-allowed;
+    margin-top: 10px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1280) {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .img-responsive {
+    width: 48%;
+    height: auto;
+    justify-content: center;
+  }
+  .visible-lg {
+    display: block;
+  }
+  .hidden-lg {
+    display: none;
+  }
+}
+@media print {
+  .hidden-print {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=grille.css.map */
